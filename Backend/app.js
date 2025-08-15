@@ -4,6 +4,8 @@ const cookieParser = require('cookie-parser');
 const { notFound, errorHandler } = require('./middlewares/error');
 const authRoutes = require('./routes/auth')
 const productRoutes = require('./routes/product')
+const bannerRoutes = require('./routes/banner')
+const userRoutes = require('./routes/user')
 
 const app = express();
 
@@ -18,7 +20,9 @@ app.use(cors())
 
 // Routes
 app.use('/api/v1/auth', authRoutes)
-app.use('/api/v1/product', productRoutes)
+app.use('/api/v1/products', productRoutes)
+app.use('/api/v1/banners', bannerRoutes)
+app.use('/api/v1/users', userRoutes)
 
 // Error middleware
 app.use(notFound)
