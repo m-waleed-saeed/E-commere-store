@@ -6,7 +6,7 @@ const { register, login, logout } = require('../controllers/auth')
 //Register router
 router.post('/register', register)
 
-//ogin router
+//Login router
 router.post('/login', login)
 
 //Logout router
