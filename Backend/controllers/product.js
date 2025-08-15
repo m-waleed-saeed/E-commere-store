@@ -5,8 +5,8 @@ const asyncHandler = require('express-async-handler')
 
 const createProduct = asyncHandler(async (req, res) => {
 
-    const newProduct = await Product(req.body);
-    const product = newProduct.save();
+    const newProduct = new Product(req.body);
+    const product = await newProduct.save();
 
     if (product) {
         res.status(201).json(product)
@@ -58,7 +58,6 @@ const getProduct = asyncHandler(async (req, res) => {
         throw new Error('Product not found')
     } else {
         res.status(201).json(product)
-
     }
 })
 
@@ -85,8 +84,8 @@ const getAllProduct = asyncHandler(async (req, res) => {
         });
     } else {
         products = await Product.find().sort({ createdAt: -1 });
-
     }
+    res.status(200).json(products)
 })
 
 // Rating Product
