@@ -2,10 +2,11 @@ const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const { notFound, errorHandler } = require('./middlewares/error');
-const authRoutes = require('./routes/auth')
-const productRoutes = require('./routes/product')
-const bannerRoutes = require('./routes/banner')
-const userRoutes = require('./routes/user')
+const authRoute = require('./routes/auth')
+const productRoute = require('./routes/product')
+const bannerRoute = require('./routes/banner')
+const userRoute = require('./routes/user')
+const orderRoute = require('./routes/order')
 
 const app = express();
 
@@ -19,10 +20,11 @@ app.use(cookieParser())
 app.use(cors())
 
 // Routes
-app.use('/api/v1/auth', authRoutes)
-app.use('/api/v1/products', productRoutes)
-app.use('/api/v1/banners', bannerRoutes)
-app.use('/api/v1/users', userRoutes)
+app.use('/api/v1/auth', authRoute)
+app.use('/api/v1/products', productRoute)
+app.use('/api/v1/banners', bannerRoute)
+app.use('/api/v1/users', userRoute)
+app.use('/api/v1/orders', orderRoute)
 
 // Error middleware
 app.use(notFound)
