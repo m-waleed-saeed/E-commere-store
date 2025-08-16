@@ -11,14 +11,16 @@ function createTransporter(config) {
 
 let configurations = {
     service: 'gmail',
-    host: smtp.gmail.com,
+    host: "smtp.gmail.com",
     port: 587,
-    requireTls: true,
+    secure: false,
+    requireTLS: true,
     auth: {
         user: EMAIL,
         pass: PASSWORD
     }
 }
+
 
 
 const sendMail = async (messageOption) => {
@@ -29,6 +31,8 @@ const sendMail = async (messageOption) => {
         if (error) {
             console.error(error);
         }
-        console.log(info)
+        console.log(info.response)
     })
 }
+
+module.exports = sendMail;
