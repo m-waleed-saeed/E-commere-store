@@ -1,15 +1,15 @@
-import React from 'react'
-import SingleProduct from './SingleProduct'
+import React from "react";
+import SingleProduct from "./SingleProduct";
 
-const ProductCard = () => {
-    return (
-        <div className='felx felx-wrap mx-[40px]'>
-            <SingleProduct />
-            <SingleProduct />
-            <SingleProduct />
-            <SingleProduct />
-        </div>
-    )
-}
+const Products = () => {
+  return (
+    <div className="flex flex-wrap mx-[40px]">
+      <SingleProduct img="lotion.jpg" rating={3.9} />
+      <SingleProduct img="lotion1.jpg" rating={4.3} />
+      <SingleProduct img="serum.jpg" rating={2.2} />
+      <SingleProduct img="serum1.jpg" rating={5} />
+    </div>
+  );
+};
 
-export default ProductCard
+export default Products;
