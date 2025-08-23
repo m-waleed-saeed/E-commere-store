@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Links = () => {
   return (
@@ -14,16 +15,16 @@ const Links = () => {
         <h2 className="text-xl font-semibold">Quick Links</h2>
         <ul className="mt-2 space-y-2">
           <li>
-            <a href="/" className="hover:underline">Home</a>
+            <Link to="/" className="hover:underline">Home</Link>
           </li>
           <li>
-            <a href="/about" className="hover:underline">About Us</a>
+            <Link to="/about" className="hover:underline">About Us</Link>
           </li>
           <li>
-            <a href="/shop" className="hover:underline">Shop</a>
+            <Link to="/shop" className="hover:underline">Shop</Link>
           </li>
           <li>
-            <a href="/contact" className="hover:underline">Contact Us</a>
+            <Link to="/contact" className="hover:underline">Contact Us</Link>
           </li>
         </ul>
       </div>
