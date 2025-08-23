@@ -1,1 +1,48 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #ff3333;
+  --secondary: #D4B14A;
+  --accent: #9CB098;
+  --bg: #F8F4EA;
+  --text: #000000;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Custom button styles */
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 4px;
+  transition: transform 0.2s;
+}
+
+.btn-secondary {
+  background: var(--secondary);
+  color: var(--text);
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 4px;
+  transition: transform 0.2s;
+}
+
+button:hover, .card-hover:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
