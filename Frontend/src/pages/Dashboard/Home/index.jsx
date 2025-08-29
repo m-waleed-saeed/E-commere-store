@@ -8,19 +8,19 @@ const Home = () => {
       <div className='flex flex-col w-2/3 mr-6'>
         {/* Stats Cards */}
         <div className="flex">
-          <div className="bg-white h-52 w-52 m-4 shadow-lg rounded-xl flex flex-col items-center border border-[#9CB098]">
+          <div className="bg-white h-52 w-60 m-4 shadow-lg rounded-xl flex flex-col items-center border border-[#9CB098]">
             <div className="h-32 w-32 m-5 border-[10px] border-[#ff3333] rounded-full flex items-center justify-center">
               <h2 className='font-bold text-2xl text-black'>699</h2>
             </div>
             <h2 className='font-semibold text-xl text-black font-playfair'>Orders</h2>
           </div>
-          <div className="bg-white h-52 w-52 m-4 shadow-lg rounded-xl flex flex-col items-center border border-[#9CB098]">
+          <div className="bg-white h-52 w-60 m-4 shadow-lg rounded-xl flex flex-col items-center border border-[#9CB098]">
             <div className="h-32 w-32 m-5 border-[10px] border-[#D4B14A] rounded-full flex items-center justify-center">
               <h2 className='font-bold text-2xl text-black'>100</h2>
             </div>
             <h2 className='font-semibold text-xl text-black font-playfair'>Products</h2>
           </div>
-          <div className="bg-white h-52 w-52 m-4 shadow-lg rounded-xl flex flex-col items-center border border-[#9CB098]">
+          <div className="bg-white h-52 w-60 m-4 shadow-lg rounded-xl flex flex-col items-center border border-[#9CB098]">
             <div className="h-32 w-32 m-5 border-[10px] border-[#9CB098] rounded-full flex items-center justify-center">
               <h2 className='font-bold text-2xl text-black'>200</h2>
             </div>
