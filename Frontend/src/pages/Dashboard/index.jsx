@@ -19,14 +19,14 @@ const items = [
   getItem(<Link to="/dashboard/home">Home</Link>, '1', <FaHome />),
   getItem('Profile', '2', <FaUser />),
   getItem(<Link to="/dashboard/users">Users</Link>, '3', <FaUsers />),
-  getItem('Products', 'sub1', <FaBox />),
-  getItem(<Link to="/dashboard/orders">Orders</Link>, '6', <FaClipboardList />),
-  getItem('Banners', '7', <FaElementor />),
-  getItem('Settings', '8', <FaCog />),
-  getItem('Backups', '9', <FaHdd />),
-  getItem('Charts', '10', <FaChartBar />),
-  getItem('All logs', '11', <FaClipboard />),
-  getItem('Logout', '12', <FaSignOutAlt />),
+  getItem(<Link to="/dashboard/products">Products</Link>, '4', <FaBox />),
+  getItem(<Link to="/dashboard/orders">Orders</Link>, '5', <FaClipboardList />),
+  getItem(<Link to="/dashboard/banners">Banners</Link>, '6', <FaElementor />),
+  getItem('Settings', '7', <FaCog />),
+  getItem('Backups', '8', <FaHdd />),
+  getItem('Charts', '9', <FaChartBar />),
+  getItem('All logs', '10', <FaClipboard />),
+  getItem('Logout', '11', <FaSignOutAlt />),
 ];
 const Dashboard = () => {
   const [collapsed, setCollapsed] = useState(false);
