@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { FaPlus, FaTrash } from 'react-icons/fa'
 import axios from 'axios';
 import userRequest from '../../../requestMethods';
@@ -7,7 +8,6 @@ import userRequest from '../../../requestMethods';
 const AddProduct = () => {
     const [selectedImage, setSelectedImage] = useState(null);
     const [inputs, setInputs] = useState({});
-    const [image, setImage] = useState('');
     const [uploading, setUploading] = useState('Uploading is 0%');
     const [selectedOptions, setSelectedOptions] = useState({
         concern: [],
@@ -50,11 +50,10 @@ const AddProduct = () => {
             const uploadRes = await axios.post("https://api.cloudinary.com/v1_1/dshqgvgne/image/upload", data)
 
             const { url } = uploadRes.data;
-            setImage(url);
+
             setUploading('Upload successful');
             const payload = { image: url, ...inputs, ...selectedOptions };
 
-            console.log("Payload to backend:", payload);
             await userRequest.post("/products", payload);
         } catch (error) {
             console.log(error);
@@ -260,14 +259,16 @@ const AddProduct = () => {
                                 ))}
                             </div>
                         </div>
-
-                        <button
-                            type="button"
-                            onClick={handleUpload}
-                            className="bg-slate-500 text-white py-2 px-4 rounded"
-                        >
-                            Create
-                        </button>
+                        <Link to="/dashboard/products">
+                            <button className="bg-blue-500 text-white py-2 px-4 rounded">
+                                Back to Products
+                            </button>
+                        </Link>
+                        <Link to="/dashboard/products">
+                            <button type="button" onClick={handleUpload} className="bg-slate-500 text-white py-2 px-4 rounded">
+                                Create
+                            </button>
+                        </Link>
                     </div>
                 </form>
             </div>

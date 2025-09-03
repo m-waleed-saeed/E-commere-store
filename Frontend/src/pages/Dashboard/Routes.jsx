@@ -15,7 +15,7 @@ const DashboardRoutes = () => {
         <Route path='/users' element={<Users/>}/>
         <Route path='/products' element={<Products/>}/>
         <Route path='/add-product' element={<AddProduct/>}/>
-        <Route path='/update-product' element={<UpdateProduct/>}/>
+        <Route path='/update-product/:id' element={<UpdateProduct/>}/>
         <Route path='/orders' element={<Orders/>}/>
         <Route path='/banners' element={<Banners/>}/>
     </Routes>
