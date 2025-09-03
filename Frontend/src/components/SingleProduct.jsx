@@ -1,7 +1,7 @@
 import React from "react";
 import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
 
-const SingleProduct = ({ img, rating = 3.7 }) => {
+const SingleProduct = ({ img, title, rating = 3.7 }) => {
     const renderStars = () => {
         const stars = [];
         for (let i = 1; i <= 5; i++) {
@@ -23,8 +23,7 @@ const SingleProduct = ({ img, rating = 3.7 }) => {
                 className="h-[400px] w-[300px] object-cover"
             />
             <h2 className="font-semibold text-[18px] w-[300px]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga pariatur
-                aliquam.
+            {title}
             </h2>
             <span className="font-semibold text-[18px]">$100</span>
             <div className="flex items-center gap-1 mt-2">

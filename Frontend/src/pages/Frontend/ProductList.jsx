@@ -1,18 +1,31 @@
-import React from 'react'
-import Products from '../../components/Products'
+import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
+import Products from "../../components/Products";
 
 const ProductList = () => {
-  return (
-    <div className='min-h-screen bg-[#F8F4EA] p-2 font-["Montserrat"]'>
+  const location = useLocation();
+  const query = location.pathname.split("/")[2];
+  const [filters, setFilters] = useState({});
+  const [sort, setSort] = useState("newest");
+  const handleFilters = (e) => {
+    const value = e.target.value;
+    setFilters({
+      ...filters,
+      [e.target.name]: value,
+    });
+  };
 
-      <div className='flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8 p-6 bg-white rounded-xl shadow-md'>
-        {/* Left - Filters */}
-        <div className='flex flex-col sm:flex-row sm:items-center gap-4 mb-6 lg:mb-0'>
-          <span className='font-semibold text-black'>Filter Products</span>
-          <select name="concern" id="" className='p-3 border border-[#9CB098] rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff3333] focus:border-transparent'>
-            <option disabled selected>
-              Concern
-            </option>
+  return (
+    <div className="min-h-screen bg-gray-50 p-8">
+      <div className="flex justify-between m-4">
+        <div className="flex flex-col sm:flex-row sm:items-center">
+          <span className="text-lg font-semibold mr-4">Filter Products:</span>
+          <select
+            name="concern"
+            className="p-2 mb-4 sm:mb-0 sm:mr-4"
+            onChange={handleFilters}
+            defaultValue="Concern"
+          >
             <option>Dry Skin</option>
             <option>Pigmentation</option>
             <option>Oil Control</option>
@@ -36,12 +49,13 @@ const ProductList = () => {
             <option>Acne</option>
             <option>Hair Growth</option>
           </select>
+
           <select
             name="brand"
-            className="p-3 border border-[#9CB098] rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff3333] focus:border-transparent">
-            <option disabled selected>
-              Popular Brands
-            </option>
+            className="p-2 mb-4 sm:mb-0 sm:mr-4"
+            onChange={handleFilters}
+            defaultValue="Popular Brands"
+          >
             <option>Garnier</option>
             <option>Kylie</option>
             <option>Kiss Beauty</option>
@@ -54,12 +68,13 @@ const ProductList = () => {
             <option>Rexona</option>
             <option>Kylie</option>
           </select>
+
           <select
             name="skintype"
-            className="p-3 border border-[#9CB098] rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff3333] focus:border-transparent">
-            <option disabled selected>
-              Skin type
-            </option>
+            className="p-2 mb-4 sm:mb-0"
+            onChange={handleFilters}
+            defaultValue="Skin type"
+          >
             <option>All</option>
             <option>Oily</option>
             <option>Dry</option>
@@ -68,10 +83,9 @@ const ProductList = () => {
           </select>
         </div>
 
-        {/* Right - Sort */}
-        <div className='flex flex-col sm:flex-row sm:items-center gap-4'>
-          <span className='font-semibold text-black'>Sort Products</span>
-          <select className="p-3 border border-[#9CB098] rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff3333] focus:border-transparent">
+        <div className="flex flex-col sm:flex-row sm:items-center">
+          <span className="text-lg font-semibold mr-4">Sort Products:</span>
+          <select className="p-2" onChange={(e) => setSort(e.target.value)}>
             <option value="newest">Newest</option>
             <option value="asc">Price (asc)</option>
             <option value="desc">Price (desc)</option>
@@ -79,10 +93,9 @@ const ProductList = () => {
         </div>
       </div>
 
-      <Products/>
-
+      <Products query={query}  filters={filters} sort={sort}  />
     </div>
-  )
-}
+  );
+};
 
-export default ProductList
+export default ProductList;

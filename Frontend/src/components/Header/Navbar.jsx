@@ -6,7 +6,6 @@ import Badge from "@mui/material/Badge";
 import { useState } from "react";
 
 const Navbar = () => {
-  const quantity =5
   const [search, setSearch] = useState('');
   const user = 'Muhammad waleed'
   
@@ -39,7 +38,7 @@ const Navbar = () => {
       <div className="flex items-center space-x-6">
         <Link to="/cart" className="relative group">
           <Badge 
-            badgeContent={quantity} 
+            badgeContent={2} 
             color="secondary"
             sx={{
               "& .MuiBadge-badge": {
